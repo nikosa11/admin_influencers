@@ -1,0 +1,60 @@
+.metricsGrid {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.metricCard {
+  padding: 0.5rem;
+  background-color: var(--card-background);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+.metricContent {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.iconWrapper {
+  padding: 0.375rem;
+  background-color: rgba(var(--primary-rgb), 0.1);
+  border-radius: 4px;
+}
+
+.icon {
+  width: 1rem;
+  height: 1rem;
+  color: var(--primary);
+}
+
+.metricInfo {
+  flex: 1;
+}
+
+.metricName {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--muted-foreground);
+}
+
+.metricValue {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.metricChange {
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-left: 0.375rem;
+}
+
+.positive {
+  color: var(--success);
+}
+
+.negative {
+  color: var(--error);
+}

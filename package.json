@@ -1,0 +1,50 @@
+{
+  "name": "admin-influencer-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@heroicons/react": "^2.0.18",
+    "@prisma/client": "^6.4.1",
+    "@radix-ui/react-icons": "^1.3.2",
+    "@radix-ui/react-popover": "^1.1.6",
+    "@radix-ui/react-select": "^2.1.6",
+    "@radix-ui/react-slot": "^1.1.2",
+    "@tanstack/react-query": "^5.0.0",
+    "@tanstack/react-table": "^8.21.2",
+    "axios": "^1.6.0",
+    "bcryptjs": "^3.0.2",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "date-fns": "^2.30.0",
+    "lucide-react": "^0.479.0",
+    "next": "14.0.0",
+    "next-auth": "^4.24.11",
+    "next-themes": "^0.4.4",
+    "prisma": "^6.4.1",
+    "react": "^18.2.0",
+    "react-day-picker": "^9.5.1",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.5.0",
+    "recharts": "^2.9.0",
+    "tailwind-merge": "^3.0.1",
+    "xlsx": "^0.18.5",
+    "zustand": "^4.4.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.9",
+    "@types/react": "^18.2.33",
+    "@types/react-dom": "^18.2.14",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.52.0",
+    "eslint-config-next": "14.0.0",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.5",
+    "typescript": "^5.2.2"
+  }
+}

@@ -1,0 +1,87 @@
+/* Top Navigation Bar */
+.top-nav-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background-color: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  padding: 12px 20px;
+}
+
+/* Dark Mode */
+:global(.dark) .top-nav-container {
+  background-color: #0f172a; /* dark:bg-gray-950 */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Horizontal Navigation List */
+.horizontal-nav {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.nav-item {
+  margin: 0 8px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #666;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.nav-link.active {
+  color: #9d4edd;
+  background-color: rgba(157, 78, 221, 0.05);
+}
+
+.nav-link:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+:global(.dark) .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.icon-container svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Add button */
+.add-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  background-color: #9d4edd;
+  border-radius: 8px;
+  margin-right: 8px;
+}
+
+.add-button svg {
+  color: white;
+  width: 18px;
+  height: 18px;
+}

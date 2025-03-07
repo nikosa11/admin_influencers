@@ -1,0 +1,25 @@
+.chartContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.chartCard {
+  background-color: var(--card-background);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.chartTitle {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+
+.chartWrapper {
+  height: 240px;
+  width: 100%;
+  background-color: var(--card-background);
+}

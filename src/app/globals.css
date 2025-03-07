@@ -1,0 +1,309 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #1f2937;
+    --card-background: #f8fafc;
+    --border: #e2e8f0;
+    --muted: #f1f5f9;
+    --muted-hover: #e2e8f0;
+    --muted-foreground: #64748b;
+    --primary: #00A7B3;
+    --primary-hover: #008A94;
+    --success: #10b981;
+    --error: #ef4444;
+    --radius: 0.5rem;
+    --nav-bg: #1a1a2e;
+    --nav-border: #2d2d3d;
+    --nav-item-hover: #2d2d3d;
+    --primary-rgb: 59, 130, 246;
+    --primary: #3b82f6;
+    --muted-foreground: #6b7280;
+    --foreground-rgb: 0, 0, 0;
+    --background-rgb: 255, 255, 255;
+  }
+
+  .dark {
+    --background: #0f172a;
+    --foreground: #f8fafc;
+    --card-background: #1e293b;
+    --border: #334155;
+    --muted: #1e293b;
+    --muted-hover: #334155;
+    --muted-foreground: #94a3b8;
+    --primary: #00C4D1;
+    --primary-hover: #00A7B3;
+    --success: #34d399;
+    --error: #f87171;
+    --primary-rgb: 59, 130, 246;
+    --primary: #60a5fa;
+    --muted-foreground: #9ca3af;
+    --foreground-rgb: 255, 255, 255;
+    --background-rgb: 17, 24, 39;
+    --background: #1a1a2e;
+    --foreground: #f3f4f6;
+    --muted: #2d2d3d;
+    --muted-hover: #3d3d4d;
+    --muted-foreground: #9ca3af;
+    --primary: #00A7B3;
+    --primary-hover: #008A94;
+    --border: #2d2d3d;
+    --card-background: #1f1f33;
+  }
+}
+
+[data-theme='dark'] {
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 17, 24, 39;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.card {
+  @apply bg-card rounded-lg border border-border shadow-sm;
+}
+
+.card-header {
+  @apply p-6 border-b border-border;
+}
+
+.card-title {
+  @apply text-lg font-semibold text-foreground;
+}
+
+.card-content {
+  @apply p-6;
+}
+
+.card-footer {
+  @apply flex items-center p-6 pt-0;
+}
+
+.card-title {
+  @apply text-2xl font-semibold leading-none tracking-tight;
+}
+
+.card-description {
+  @apply text-sm text-muted-foreground;
+}
+
+/* Dashboard specific styles */
+.dashboard-card {
+  @apply bg-white rounded-lg shadow-md overflow-hidden;
+}
+
+.dashboard-card-header {
+  @apply p-6 border-b border-gray-200;
+}
+
+.dashboard-card-title {
+  @apply text-lg font-medium text-gray-900;
+}
+
+.dashboard-card-content {
+  @apply p-6;
+}
+
+.dashboard-metric {
+  @apply flex items-center justify-between p-4 bg-white rounded-lg shadow-sm border border-gray-100;
+}
+
+.dashboard-metric-label {
+  @apply text-sm font-medium text-gray-500;
+}
+
+.dashboard-metric-value {
+  @apply text-2xl font-semibold text-gray-900;
+}
+
+.dashboard-metric-change {
+  @apply text-sm font-medium;
+}
+
+.dashboard-metric-change-positive {
+  @apply text-green-600;
+}
+
+.dashboard-metric-change-negative {
+  @apply text-red-600;
+}
+
+.dashboard-chart {
+  @apply h-[300px] w-full;
+}
+
+/* Responsive grid layouts */
+.dashboard-grid {
+  @apply grid gap-6;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.dashboard-grid-2 {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-6;
+}
+
+.dashboard-grid-3 {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+/* Chart customizations */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  @apply stroke-gray-200;
+}
+
+.recharts-tooltip-wrapper {
+  @apply !shadow-lg;
+}
+
+.recharts-default-tooltip {
+  @apply !bg-white !border !border-gray-200 !rounded-lg !shadow-md !p-3;
+}
+
+.recharts-tooltip-label {
+  @apply !text-sm !font-medium !text-gray-600;
+}
+
+.recharts-tooltip-item-list {
+  @apply !mt-1;
+}
+
+.recharts-tooltip-item {
+  @apply !text-sm !text-gray-500;
+}
+
+/* Custom scrollbar */
+.custom-scrollbar {
+  @apply scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100;
+}
+
+@layer components {
+  .top-nav {
+    background-color: #1a1a2e;
+    border-bottom: 1px solid #2d2d3d;
+    height: 64px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 50;
+  }
+
+  .nav-container {
+    height: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    color: white !important;
+    font-weight: bold;
+    font-size: 1.25rem;
+    letter-spacing: 0.05em;
+  }
+
+  .nav-items {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    color: red !important;
+  }
+
+  .nav-item:hover {
+    background-color: #2d2d3d;
+    color: white !important;
+  }
+
+  .nav-item.active {
+    background-color: #2d2d3d;
+    color: white !important;
+  }
+
+  .theme-toggle {
+    margin-left: 16px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    background-color: #00A7B3;
+    color: white !important;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+
+  .theme-toggle:hover {
+    background-color: #008A94;
+  }
+
+  .table-container {
+    @apply w-full overflow-hidden;
+  }
+
+  table {
+    @apply min-w-full divide-y divide-gray-200;
+  }
+
+  thead {
+    @apply bg-gray-50;
+  }
+
+  th {
+    @apply px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider;
+  }
+
+  tbody {
+    @apply bg-white divide-y divide-gray-200;
+  }
+
+  td {
+    @apply px-6 py-4 whitespace-nowrap text-sm text-gray-900;
+  }
+
+  tr:hover {
+    @apply bg-gray-50;
+  }
+
+  .card {
+    @apply bg-card rounded-lg border border-border shadow-sm;
+  }
+
+  .button {
+    @apply px-4 py-2 rounded-lg font-medium text-sm transition-colors duration-200;
+  }
+
+  .button-primary {
+    @apply bg-blue-600 text-white shadow-sm hover:bg-blue-700;
+  }
+
+  .button-secondary {
+    @apply bg-white text-gray-700 hover:bg-gray-50 border border-gray-200;
+  }
+}
