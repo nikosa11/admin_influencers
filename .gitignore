@@ -1,0 +1,8 @@
+cat > .gitignore << EOL
+# Next.js build output
+.next/
+.next
+
+# Dependencies
+node_modules/
+node_modules
